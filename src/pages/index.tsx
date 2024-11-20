@@ -1,21 +1,21 @@
 import Head from "next/head";
 import {Button} from "~/components/ui/button";
-import React, {useRef, useState} from "react";
+import React, { useState} from "react";
 import {Input} from "~/components/ui/input";
 import {Background} from "~/components/ui/background";
 import {env} from "~/env";
-import {Rock, RockProps} from "~/components/ui/rock";
+//import {Rock, RockProps} from "~/components/ui/rock";
 
 export default function Home() {
     const [value, setValue] = useState("");
 
-    const rockRef = useRef<RockProps>(null);
+    //const rockRef = useRef<RockProps>(null);
 
     const onSubmit = () => {
         if (value !== env.NEXT_PUBLIC_PASSCODE) {
             setValue("")
-            if (!rockRef.current) return
-            rockRef.current.handleRock()
+            /*if (!rockRef.current) return
+             rockRef.current.handleRock()*/
             return
         }
     }
@@ -29,7 +29,6 @@ export default function Home() {
             </Head>
             <main className="flex items-center justify-center p-24 w-full min-h-screen ">
                 <Background/>
-                <Rock ref={rockRef} />
                 <div className='flex gap-4'>
                     <Input
                         type="password"

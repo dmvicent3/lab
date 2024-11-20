@@ -32,7 +32,7 @@ const Background = () => {
             ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)'
             ctx.lineWidth = 1
 
-            const gridSize = 60
+            const gridSize = 70
             for (let x = 0; x <= width; x += gridSize) {
                 ctx.beginPath()
                 ctx.moveTo(x, 0)
@@ -48,7 +48,7 @@ const Background = () => {
             }
 
             // Apply fading gradients to edges
-            const gradientSize = 50
+            const gradientSize = 80
             const applyGradient = (x: number, y: number, w: number, h: number, isHorizontal: boolean, reverse: boolean) => {
                 const gradient = ctx.createLinearGradient(
                     isHorizontal ? (reverse ? x + w : x) : x + w / 2,
