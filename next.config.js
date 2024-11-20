@@ -6,18 +6,27 @@ await import("./src/env.js");
 
 /** @type {import("next").NextConfig} */
 const config = {
-  reactStrictMode: true,
+    reactStrictMode: true,
 
-  /**
-   * If you are using `appDir` then you must comment the below `i18n` config out.
-   *
-   * @see https://github.com/vercel/next.js/issues/41980
-   */
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en",
-  },
-  transpilePackages: ["geist"],
+    /**
+     * If you are using `appDir` then you must comment the below `i18n` config out.
+     *
+     * @see https://github.com/vercel/next.js/issues/41980
+     */
+    i18n: {
+        locales: ["en"],
+        defaultLocale: "en",
+    },
+    transpilePackages: ["geist"],
+    images: {
+        domains: ['https://media1.tenor.com/'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'media1.tenor.com',
+            },
+        ],
+    }
 };
 
 export default config;
