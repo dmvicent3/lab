@@ -19,7 +19,9 @@ const Rock = forwardRef<RockProps, any>((_props, ref) => {
         setTimeout(()=> {
             if (audioRef.current) {
                 audioRef.current.currentTime = 0
-                audioRef.current.play()
+                audioRef.current.play().then(_r => {
+                    //
+                })
             }
         }, 100)
 
